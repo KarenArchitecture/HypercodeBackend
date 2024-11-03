@@ -1,0 +1,35 @@
+﻿@model ProjectVM
+
+<section class="projects-container bg-header">
+    <h1 class="projects-header">@Model.Name</h1>
+    <div class="container-fluid projects-tabs">
+        <div>
+            <div class="row">
+                <!-- filter right side -->
+                <div class="project-bar col-xl-3 col-lg-4 col-md-5 col-sm-12 d-lg-block">
+                    <img src="~/image/@Model.Image" alt="" class="project-bar-img col-12 p-0">
+                    <div class="project-bar-details text-center p-4 mt-4">
+                        <h2 class="fs-1 mb-5 pb-4 border-bottom">درباره @Model.Name</h2>
+                        <ul class="project-details-list">
+                            <li class="project-details-list-item d-flex justify-content-between mb-3">
+                                <h3><i class="fa-solid fa-caret-left"></i> تاریخ اتمام پروژه</h3>
+                                <p>@Model.FinishedDate</p>
+                            </li>
+                            <li class="project-details-list-item d-flex justify-content-between mb-3">
+                                <h3><i class="fa-solid fa-caret-left"></i> نام دسته بندی</h3>
+                                <p>@Model.ProjectCategoryName</p>
+                            </li>
+                            <li class="project-details-list-item d-flex justify-content-between mb-3">
+                                <h3><i class="fa-solid fa-caret-left"></i> آدرس وب سایت</h3>
+                                <a class="link_hyper" href="@Model.URL" target="_blank" style="direction: ltr;">@Model.URL</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- project cards -->
+                <div class="project-description-box text-justify col-xl-9 col-lg-8 col-md-7 col-sm-12">
+                    <p class="lh-lg p-4">@Model.Description</p>
+                </div>
+            </div>
+        </div>
+</section>

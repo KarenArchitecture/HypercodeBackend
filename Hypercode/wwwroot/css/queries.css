@@ -1,0 +1,119 @@
+/* Mobile FIRST - BOOTSTRAP GRID */
+
+/*
+  1rem = 1em = 16px
+  rem & em do not depend on html font-size in media queries.
+  in media we use em instead of rem!
+*/
+
+/* every style in style.css (default style) is for xs size */
+/*  420px => xs => 576px*/
+@media (max-width: 26.25rem) {
+}
+
+/* 576px => s => 768px */
+/* container: 540px */
+@media (max-width: 36em) {
+}
+/* 992px => lg => 1200px | WIDE SCREENS
+  container: 960px */
+@media (max-width: 62em) {
+    .hero-section-img {
+        padding-bottom: 7.2rem;
+    }
+
+    .service-header {
+        margin-top: 7.4rem;
+    }
+
+    .card-service {
+        margin: auto;
+        margin-bottom: 4.8rem;
+        width: 75%;
+    }
+
+    .about-section-content {
+        margin-bottom: 6.4rem;
+    }
+
+    .blog-section {
+        margin-bottom: 4.8rem;
+    }
+
+    .footer .container {
+        padding-top: 4.8rem;
+    }
+    /* projects archive page */
+    .projects-bar {
+        margin-bottom: 3.6rem;
+    }
+
+        .projects-bar ul {
+            display: grid !important;
+            column-gap: 2.4rem;
+            grid-template-columns: 1fr 1fr 1fr !important;
+        }
+
+    .projects-tabs .item {
+        margin: auto auto 4.6rem auto;
+        width: 75% !important;
+    }
+
+    .projects-box {
+        margin-top: 4.8rem;
+    }
+    /* single project page */
+}
+/* 768px => md => 992px |
+  container: 720px */
+@media (max-width: 48em) {
+    .hero-section-img {
+        width: 75%;
+        margin: auto;
+    }
+    /* TimeLine */
+    .timeline {
+        display: grid;
+        grid-template-columns: 1fr 3px 1fr;
+    }
+
+    .timeline-middle {
+        position: relative;
+        background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+        width: 3px;
+        height: 100%;
+    }
+
+    .main-middle {
+        opacity: 0;
+    }
+
+    .timeline-circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+/* 1200px => xl => 1400px |
+  container: 1140px */
+@media (max-width: 75em) {
+    /* projects archive page */
+    .projects-container .item {
+        height: 25.3rem;
+    }
+    /* single project page */
+    .project-bar {
+        position: initial;
+        z-index: 0;
+    }
+}
+/* 1400px => xxl |
+  container: 1320px */
+@media (max-width: 87.5em) {
+}

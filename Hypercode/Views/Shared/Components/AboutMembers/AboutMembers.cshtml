@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AboutMemberVM>
+<style>
+/*     
+    .card0 {
+        background: url("assets/img/profile-default.jpg") center center no-repeat;
+        background-size: 300px;
+    }
+    .card-member:hover {
+        background: url("assets/img/profile-default.jpg") left center no-repeat;
+        background-size: 600px;
+    }
+ */
+ </style>
+
+<div data-aos="fade-up" data-aos-duration="1800">
+    <h2 class="about-title title-border position-relative text-light mt-lg-5 mt-3 pb-3 fw-bold">اعضای هایپر کد</h2>
+    <div>
+        <div class="members-container row w-100">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card-member" style="background-image:url('/wwwroot/image/@item.Image') center center no-repeat;">
+                        <div class="border-member">
+                            <h2>@item.Name</h2>
+                            <div class="members-icons icons">
+                                @foreach (var media in item.memberSocialMedias)
+                                {
+                                    <a href="@media.SocialURL"><img src="~/icons/@media.Icon" /></a>
+                                    @* <i class="fa fa-codepen" aria-hidden="true"></i> *@
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <partial name="_HeaderLinks"/>
+    <title>هایپر کد</title>
+</head>
+
+<body>
+    <header>
+        <!--Mobile Menu-->
+        <div class="offcanvas offcanvas-start w-100 bg-header" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">هایپرکد</h5>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                </div>
+                <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Action</a></li>
+                        <li><a class="dropdown-item">Another action</a></li>
+                        <li><a class="dropdown-item">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Mobile Menu-->
+        <!-- MAIN MENU -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-hypercode">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="~/image//HC-LOGO -1-01.png" alt="لوگوی وبسایت" class="nav-brand">
+                    <span class="text-light fs-1 ms-2 fw-bold"> هایپر کد</span>
+                </a>
+                <button class="navbar-toggler text-secondary-dark border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="fa fa-bars text-secondary-dark fs-2"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">خانه</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Project" asp-action="Index">پروژه‌ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Service" asp-action="Index">خدمات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">مقالات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="About">درباره‌ ما</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Contact">تماس با ما</a>
+                        </li>
+                    </ul>
+                    <!-- Search box -->
+                    <a data-bs-toggle="modal" data-bs-target="#exampleModal"
+                       class="search-box-icon btn btn-outline-dark rounded-circle d-flex justify-content-center align-content-center flex-wrap text-center">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- DARK MODE TOGGLER -->
+            <label for="theme" class="theme d-lg-flex d-xl-flex d-xxl-flex d-none">
+                <span class="theme__toggle-wrap">
+                    <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+                    <span class="theme__fill"></span>
+                    <span class="theme__icon">
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                    </span>
+                </span>
+            </label>
+        </nav>
+        <!-- MAIN MENU -->
+    </header>
+    @RenderBody()
+    <!-- Footer -->
+    <partial name="_Footer" />
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content search-modal">
+                <div class="modal-header">
+                    <img src="~/image/HC-LOGO -1-01.png" class="modal-title" width="100" height="100" />
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="search-box-input">
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                                   aria-describedby="button-addon1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <partial name="_Scripts" />
+</body>
+
+</html>

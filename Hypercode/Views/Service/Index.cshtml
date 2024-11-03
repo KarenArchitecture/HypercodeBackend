@@ -1,0 +1,43 @@
+﻿@model ServiceArchiveVM
+
+  <section class="services-section p-lg-5 p-3">
+    <h1 class="service-header"><span>خدماتی</span> که ما ارائه میدیم</h1>
+    <div>
+      <div class="row">
+            @foreach (var item in Model.services)
+            {
+                <div class="col-lg-4 col-12">
+                    <div class="card-service z-index-2">
+                        <span class="icon">
+                            <img src="~/icons/@item.Icon" style="width: 3rem; fill:white; stroke: white; color: white;"></img>
+                        </span>
+                        <h4>@item.Name</h4>
+                        <p>
+                            @item.ShortDescription
+                            <br />
+                            <a class="btn-site-amber d-block mt-5" asp-controller="Service" asp-action="Single" asp-route-serviceId="@item.Id">شرح خدمات</a>
+                        </p>
+                        <div class="shine"></div>
+                        <div class="background">
+                            <div class="tiles">
+                                <div class="tile tile-1"></div>
+                                <div class="tile tile-2"></div>
+                                <div class="tile tile-3"></div>
+                                <div class="tile tile-4"></div>
+                                <div class="tile tile-5"></div>
+                                <div class="tile tile-6"></div>
+                                <div class="tile tile-7"></div>
+                                <div class="tile tile-8"></div>
+                                <div class="tile tile-9"></div>
+                                <div class="tile tile-10"></div>
+                            </div>
+                            <div class="line line-1"></div>
+                            <div class="line line-2"></div>
+                            <div class="line line-3"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+      </div>
+    </div>
+  </section>

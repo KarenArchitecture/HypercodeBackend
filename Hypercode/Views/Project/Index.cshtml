@@ -1,0 +1,1123 @@
+﻿@model ProjectArchiveVM
+<section class="projects-container bg-header">
+
+    <h1 class="projects-header">پروژه‌های ما</h1>
+    <div>
+        <div class="row">
+          <!-- filter right side -->
+          <div class="projects-bar col-lg-3 col-md-12 d-lg-block d-none">
+            <h2 class="border-bottom text-center pb-3">دسته بندی پروژه‌ها</h2>
+            <!-- Nav pills -->
+            <ul class="row d-flex flex-lg-column nav nav-pills nav-justified" role="tablist">
+              @foreach (var item in Model.Categories)
+                    {
+                        <li class="nav-item">
+                            <a asp-controller="Project" asp-action="Index" asp-route-proCatId="@item.Id">@item.Name</a>
+                        </li>
+                    }
+            </ul>
+          </div>
+          
+          <!-- filter top side -->
+          <div class="dropdown projects-filter-dropdown d-lg-none">
+                <button class="dropdown-toggle p-3 border border-white rounded-3 w-75" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    دسته بندی پروژه ها
+                </button>
+
+                <ul class="dropdown-menu nav-pills w-75" role="tablist">
+                    @foreach (var item in Model.Categories)
+                    {
+                        <li class="nav-item text-center" role="presentation">
+                            @* <a class="dropdown-item nav-link text-dark p-3 active" data-bs-toggle="pill" aria-selected="true" role="tab" asp-controller="Project" asp-action="Index" asp-route-proCatId="@item.Id">@item.Name</a> *@
+                            <a asp-controller="Project" asp-action="Index" asp-route-proCatId="@item.Id">@item.Name</a>
+                        </li>
+                    }
+                </ul>
+          </div>
+
+
+          <!-- project cards -->
+          <div class="projects-box col-lg-9 col-md-12">
+            <div class="tab-content">
+              <div id="menu1" class="container tab-pane active">
+                <br>
+                <div class="row">
+                    @foreach (var item in Model.Projects)
+                    {
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="item">
+                                <div class="card-item">
+                                    <div class="circle circle2"></div>
+                                    <div class="circle circle1"></div>
+                                    <img src="~/image/@item.Image" />
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        @item.ShortDescription
+                                        <br><br><br><a asp-controller="Project" asp-action="Single" asp-route-projectId="@item.Id" class="button">ادامه ی مطلب</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+              </div>
+              <div id="menu2" class="container tab-pane fade"><br>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a href="SingleProject.html" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="menu3" class="container tab-pane fade"><br>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a href="SingleProject.html" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="menu4" class="container tab-pane fade"><br>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a href="SingleProject.html" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="menu5" class="container tab-pane fade"><br>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a href="SingleProject.html" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="menu6" class="container tab-pane fade"><br>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a href="SingleProject.html" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/slider2.3.png" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/9d27fd13e3b64011961c828b6d237e81.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/7e38f05c763a44639149546f2deb7966.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/53aa8bad151b43199c8aabce8ac3410b.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/Visit.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="item">
+                      <div class="card-item">
+                        <div class="circle circle2"></div>
+                        <div class="circle circle1"></div>
+                        <img src="~/image/HC-LOGO-compact.jpg" />
+                      </div>
+                      <div class="content">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهو م از صنعت چاپ،
+                          و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه ر
+                          وزنامه و مجله در ستون و سطرآنچنان که لازم است
+                          <br><br><br><a asp-controller="Project" asp-action="Single" class="button">ادامه ی مطلب</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <ul class="nav nav-tabs">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="#menu1">وب سایت</a></li>
+            <li><a href="#menu2">نرم افزار ویندوز</a></li>
+            <li><a href="#menu3">هوش مصنوعی</a></li>
+            <li><a href="#menu4">خدمات سئو</a></li>
+            <li><a href="#menu5">طراحی UI / UX</a></li>      
+            <li><a href="#menu6">برندسازی و MBA</a></li>  
+          </ul>
+        </li>
+      </ul> -->
+  </section>

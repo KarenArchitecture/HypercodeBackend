@@ -1,0 +1,15 @@
+﻿@model SingleServiceVM
+<section class="services-section p-lg-5 p-3">
+    <h1 class="service-header">
+        <span class="icon">
+            <img src="~/icons/@Model.Icon" style="width: 3rem; fill:white; stroke: white; color: white;"></img>
+        </span> @Model.Name
+    </h1>
+    <div class="card-service">
+        <div class=" text-justify">
+            <p class="lh-lg p-4">
+                @Model.Description
+                </p>
+        </div>
+    </div>
+</section>

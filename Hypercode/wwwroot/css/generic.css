@@ -1,0 +1,134 @@
+/* ROOT */
+:root {
+  font-size: 62.5%;
+  /* color palette */
+  --secondary-dark: #dba800;
+  --secondary-light: #ffcc24;
+  --accent-dark: #d60040;
+  --accent-dark-tnt: #e6668c;
+  --accent-dark-shd: #96002d;
+  --accent-light: #ff2969;
+  --primary-dark: #461c6d;
+  --primary-light: #bc92e3;
+
+  --dark: #333333;
+  --dark-tnt-1: #474747;
+  --dark-shd-1: #040311;
+  --light: #fbfbfe;
+  --light-shd-1: #efeefc;
+
+  --box-shadow: 0px 5px 25px var(--accent-dark-shd);
+}
+@font-face {
+  font-family: Shabnam;
+  src: url("../fonts/Shabnam.ttf");
+}
+/* GENERAL */
+body {
+  font-size: 1.6rem;
+  background-color: var(--dark-shd-1);
+  color: var(--light);
+}
+* {
+  font-family: Shabnam, Tahoma, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.text-justified{
+  text-align: justify;
+}
+a{
+  text-decoration: none !important;
+}
+.z-index-2{
+  z-index: 1!important;
+}
+/* ANIMATIONS */
+.animation {
+  transition: all 0.3s;
+}
+.btn-site-amber{
+  border: 3px solid var(--secondary-dark);
+  color: var(--secondary-dark);
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.btn-site-amber:hover{
+  border: 3px solid var(--secondary-dark);
+  background-color: var(--secondary-dark);
+  color: black;
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.btn-site-accent{
+  border: 3px solid var(--accent-dark);
+  color: var(--accent-dark);
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.btn-site-accent:hover{
+  background-color: var(--accent-dark);
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.btn-site-accent-colored{
+  border: 3px solid var(--accent-dark);
+  background-color: var(--accent-dark);
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.btn-site-accent-colored:hover{
+  background-color: transparent;
+  color: var(--accent-dark);
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.btn-site-primary{
+  border: 3px solid var(--primary-light);
+  color: var(--primary-dark);
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.btn-site-primary:hover{
+  background-color: var(--primary-light);
+  color: black;
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.btn-site-white{
+  border: 3px solid white;
+  color: var(--primary-dark);
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.btn-site-white:hover{
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.link_hyper:link, .link_hyper:visited{
+    color: var(--light);
+}
+.link_hyper:hover{
+    color: var(--light-shd-1);
+}
+.link_hyper:active{
+    color: var(--secondary-light);
+}
