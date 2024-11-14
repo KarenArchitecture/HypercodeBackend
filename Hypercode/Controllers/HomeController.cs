@@ -1,9 +1,11 @@
 using Hypercode.Application.Common.Interfaces;
 using Hypercode.Application.Common.Services.Interface;
 using Hypercode.Domain.Entities;
+using Hypercode.Infrastructure.Data;
 using Hypercode.Models;
 using Hypercode.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Hypercode.Controllers
@@ -13,15 +15,15 @@ namespace Hypercode.Controllers
         private readonly IHomeService service;
         private readonly IProjectService project_service;
         private readonly ISocialMediaService socialMedia_service;
-        private readonly IMemberService member_service;
-        private readonly IRoadMapService roadMap_service;
+        private readonly IEmailService email_service;
         
         
-        public HomeController(IHomeService service, IProjectService project_service, ISocialMediaService socialMedia_service)
+        public HomeController(IHomeService service, IProjectService project_service, ISocialMediaService socialMedia_service, IEmailService email_service)
         {
             this.service = service;
             this.project_service = project_service;
             this.socialMedia_service = socialMedia_service;
+            this.email_service = email_service;
             
         }
         public IActionResult Index(int proCatId)
@@ -68,6 +70,28 @@ namespace Hypercode.Controllers
         {
             return ViewComponent("AboutMembers");
         }
+        [Route("SendEmail")]
+        public string SendEmail(string fullName, string emailAddress, string messageText)
+        {
+            var email = new Email()
+            {
+                FullName = fullName,
+                Text = messageText,
+                Date = DateTime.Now,
+                EmailAddress = emailAddress
+            };
+
+            try
+            {
+                email_service.AddEmail(email);
+                
+                return "Form submitted successfully";
+            }
+            catch (Exception)
+            {
+                return "FUCK YOU!";
+            }
+        }
         public IActionResult Contact()
         {
             var obj = service.GetHome();
@@ -84,5 +108,16 @@ namespace Hypercode.Controllers
             };
             return View(vm);
         }
+        //[HttpPost]
+        //public IActionResult Contact(Email email)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        email_service.AddEmail(email);
+        //        return Json(new { Status = "Success", Message = "Form submitted successfully" });
+        //    }
+        //    return Json(new { Status = "Error", Message = "Invalid data" });
+        //}
+
     }
 }

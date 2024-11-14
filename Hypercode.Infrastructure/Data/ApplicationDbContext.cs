@@ -23,12 +23,12 @@ namespace Hypercode.Infrastructure.Data
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<RoadMap> RoadMaps { get; set; }
         public DbSet<Members> Members { get; set; }
+        public DbSet<Email> Emails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // with inheriting IdentityDbContext, the code below is required, otherwise it's not
             // base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<Project>().HasData(
                 new Project
                 {

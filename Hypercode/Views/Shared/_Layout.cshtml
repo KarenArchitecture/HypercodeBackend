@@ -119,6 +119,24 @@
     </div>
     <!-- SCRIPTS -->
     <partial name="_Scripts" />
+    <script>
+        function sendEmail() {
+            console.log("i'm here")
+            console.log($("#fullName").val())
+            console.log($("#email").val())
+            console.log($("#text").val())
+            $.ajax({
+                url: "/SendEmail",
+                data: { fullName: $("#fullName").val(), emailAddress: $("#email").val(), messageText: $("#text").val() }
+            }).done(function (result) {
+                $("#emailResult").html(result);
+                $("#fullName").html("");
+                $("#email").html("");
+                $("#text").html("");
+            });
+
+        }
+    </script>
 </body>
 
 </html>

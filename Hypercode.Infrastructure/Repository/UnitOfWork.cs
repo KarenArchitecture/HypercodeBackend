@@ -19,6 +19,7 @@ namespace Hypercode.Infrastructure.Repository
         public ISocialMediaRepository SocialMedia { get; private set; }
         public IRoadMapRepository RoadMap { get; private set; }
         public IMemberRepository Member { get; private set;}
+        public IEmailRepository Email { get; private set;}
 
 
 
@@ -32,6 +33,7 @@ namespace Hypercode.Infrastructure.Repository
             SocialMedia = new SocialMediaRepository(context);
             RoadMap = new RoadMapRepository(context);
             Member = new MemberRepository(context);
+            Email = new EmailRepository(context);
         }
 
         public void Save()

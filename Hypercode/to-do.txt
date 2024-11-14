@@ -1,5 +1,89 @@
-*** hide empty projectCategory ***
+﻿*** hide empty projectCategory ***
 
 
 CONTACT PAGE
 email send
+
+
+*** submit message function ***
+path => /Views/Shared/_DefaultLayout.cshtml
+
+function SubmitMessage() {
+            $.ajax({
+                url: "/SubmitMessage",
+                type: "Get",
+                data: { fullname: $("#fullname").val(), Email: $("#Email").val(), Phonenumber: $("#Phonenumber").val(), Subject: $("#Subject").val(), Text: $("#Text").val() }
+            }).done(function (result) {
+                if (result.includes("شد")) {
+                    $("#MessageResult").removeClass('text-red');
+                    $("#MessageResult").addClass('text-green2');
+                }
+                else {
+                    $("#MessageResult").removeClass('text-green2');
+                    $("#MessageResult").addClass('text-red');
+                }
+                $("#MessageResult").html(result);
+                $("#fullname").html("");
+                $("#Email").html("");
+                $("#Subject").html("");
+                $("#Phonenumber").html("");
+                $("#Text").html("");
+            });
+
+*** home controller ***
+[Route("SubmitMessage")]
+        public string SubmitMessage(string fullname, string Email, string Phonenumber, string Subject, string Text)
+        {
+            ISiteRepository siteRepository = new SiteRepository();
+            return siteRepository.SubmitMessage(fullname, Email, Phonenumber, Subject, Text);
+        }
+
+*** in home repository ***
+
+ public string SubmitMessage(string fullname, string Email, string Phonenumber, string Subject, string Text)
+        {
+            try
+            {
+                FeedBack feedBack = new FeedBack()
+                {
+                    Email = Email,
+                    Fullname = fullname,
+                    Subject = Subject,
+                    Text = Text,
+                    IsShow = false,
+                    CreateDate = DateTime.Now
+                };
+                if (CheckMessage(feedBack) == "موفق")
+                {
+                    db.FeedBacks.Add(feedBack);
+                    db.SaveChanges();
+                    return $"{fullname} عزیز ! پیام شما با موفقیت ارسال شد";
+                }
+                else
+                {
+                    return CheckMessage(feedBack);
+                }
+            }
+            catch
+            {
+                return $"{fullname} عزیز ! هنگام ارسال پیام خطایی رخ داد لطفا مجددا تلاش فرمایید";
+
+            }
+        }
+
+
+
+
+
+        send email js
+                    $.ajax({
+                url: "/SendEmail",
+                type: "Get",
+                data: { fullName: $("#fullname").val(), emailAddress: $("#email").val(), messageText: $("#text").val() }
+            }).done(function (result) {
+                $("#emailResult").html(result);
+                $("#fullname").html("");
+                $("#email").html("");
+                $("#text").html("");
+            });
+

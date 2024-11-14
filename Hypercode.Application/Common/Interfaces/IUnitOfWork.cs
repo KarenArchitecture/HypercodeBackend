@@ -15,6 +15,7 @@ namespace Hypercode.Application.Common.Interfaces
         ISocialMediaRepository SocialMedia { get; }
         IRoadMapRepository RoadMap { get; }
         IMemberRepository Member { get; }
+        IEmailRepository Email { get; }
         void Save();
     }
 }

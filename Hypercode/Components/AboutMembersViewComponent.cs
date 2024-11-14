@@ -18,18 +18,24 @@ namespace Hypercode.Web.Components
         {
             var items = service.GetMembers();
             List<AboutMemberVM> vm = new List<AboutMemberVM>();
-            
             foreach (var item in items)
             {
-                vm.Add(new AboutMemberVM()
+                var newItem = new AboutMemberVM()
+                {
+                    Name = item.Name,
+                    Image = item.Image
+                };
+                newItem.memberSocialMedias = new List<AboutMemberSocialMediaVM>();
+                foreach (var socialMediaItem in item.SocialMedias)
+                {
+                    newItem.memberSocialMedias.Add(new AboutMemberSocialMediaVM()
                     {
-                        Name = item.Name,
-                        Image = item.Image,
-                        memberSocialMedias = item.SocialMedias,
-                    }
-                    );
+                        Icon = socialMediaItem.Icon,
+                        SocialURL = socialMediaItem.SocialURL
+                    });
+                }
+                vm.Add(newItem);
             }
-
             return View("AboutMembers", vm);
         }
     }

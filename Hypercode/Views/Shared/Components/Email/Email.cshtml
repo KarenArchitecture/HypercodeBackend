@@ -1,0 +1,33 @@
+﻿<form class="contact-form">
+    <h1 class="title text-light text-center mb-4">ارسال پیام</h1>
+    <!-- Name -->
+    <div class="form-group position-relative">
+        <label for="formName" class="d-block">
+            <i class="icon"></i>
+        </label>
+        <input type="text" id="fullName" class="form-control form-control-lg thick" placeholder="نام و نام خانوادگی">
+    </div>
+
+    <!-- E-mail -->
+    <div class="form-group position-relative">
+        <label for="formEmail" class="d-block">
+            <i class="icon"></i>
+            @* data-feather="mail" *@
+        </label>
+        <input type="email" name="email" id="email" class="form-control form-control-lg thick" placeholder="E-mail">
+    </div>
+
+    <!-- Message -->
+    <div class="form-group message">
+        <textarea name="text" id="text" class="form-control form-control-lg" rows="7" placeholder="لطفا متن پیام خود را وارد کنید"></textarea>
+    </div>
+
+    <!-- Submit btn -->
+    <div class="text-center">
+        <a onclick="sendEmail()" class="btn btn-contact" tabIndex="-1">ارسال پیام</a>
+        <p id="emailResult"></p>
+    </div>
+</form>
+
+
+@* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> *@
