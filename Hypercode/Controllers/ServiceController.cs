@@ -15,17 +15,27 @@ namespace Hypercode.Web.Controllers
 
         public IActionResult Index()
         {
-            ServiceArchiveVM vm = new ServiceArchiveVM();
-            vm.services = service.GetAllServices();
-            
-            return View(vm);
+            var serviceItems = service.GetAllServices();
+            List<ServiceVM> list = new List<ServiceVM>();
+            foreach (var item in serviceItems)
+            {
+                var vm = new ServiceVM()
+                {
+                    ServiceId = item.Id,
+                    Description = item.Description,
+                    Icon = item.Icon,
+                    Name = item.Name
+                };
+                list.Add(vm);
+            }
+            return View(list);
         }
         public IActionResult Single(int serviceId)
         {
             var obj = service.GetService(serviceId);
-            SingleServiceVM vm = new SingleServiceVM()
+            ServiceVM vm = new ServiceVM()
             {
-                Description = obj.Description,
+                FullDescription = obj.Description,
                 Icon = obj.Icon,
                 Name = obj.Name
             };

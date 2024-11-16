@@ -88,7 +88,8 @@ namespace Hypercode.Infrastructure.Data
                     Address = " تهران - امیرآباد - خیابان سیندخت - کوچه فتاح الجنان - پلاک 3",
                     ContactLogo = "logo.jpg",
                     ContactSlogan = "باهم برای هم",
-                    WebsiteURL = "HyperCodeCompany.com"
+                    WebsiteURL = "HyperCodeCompany.com",
+                    AboutDescription = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است لورم ایپسوم متن\r\n            ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید\r\n            سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم\r\n            از\r\n            صنعت چاپ، و با استفاده از طراحان گرافیک است"
                 }
                 );
             modelBuilder.Entity<Service>().HasData(

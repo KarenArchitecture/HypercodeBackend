@@ -1,9 +1,10 @@
 ﻿@model List<ServiceVM>
 
-  <section class="services-section p-lg-5 p-3">
+<section class="services-section p-lg-5 p-3">
     <h1 class="service-header"><span>خدماتی</span> که ما ارائه میدیم</h1>
     <div>
-      <div class="row">
+
+        <div class="row">
             @foreach (var item in Model)
             {
                 <div class="col-lg-4 col-12">
@@ -38,6 +39,6 @@
                     </div>
                 </div>
             }
-      </div>
+        </div>
     </div>
-  </section>
+</section>

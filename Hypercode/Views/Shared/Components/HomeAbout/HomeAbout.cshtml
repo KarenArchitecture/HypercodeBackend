@@ -1,0 +1,22 @@
+﻿@model HomeAboutVM
+
+<section class="about-section container">
+    <div class="row">
+        <div class="about-section-img col-lg-4">
+            <img src="~/image/@Model.BannerImage" alt="عکس درباره ما">
+        </div>
+        <div class="about-section-content col-lg-8">
+            <div>
+                <h3>درباره هایپرکد</h3>
+                <div class="about-divider"></div>
+                <p class="text-justified">
+                    @Model.AboutDescription
+                </p>
+                <div class="about-buttons">
+                    <a href="#" class="button">نیاز به مشاوره دارید؟</a>
+                    <a href="#" class="button animation">@Model.PhoneNumber <i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

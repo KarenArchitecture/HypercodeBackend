@@ -22,6 +22,7 @@ namespace Hypercode.Web.Components
             {
                 var newItem = new AboutMemberVM()
                 {
+
                     Name = item.Name,
                     Image = item.Image
                 };

@@ -7,5 +7,6 @@ namespace Hypercode.Web.ViewModels
         public Home Home { get; set; }
         public IEnumerable<Project> Projects { get; set; }
         public IEnumerable<ProjectCategory> Categories { get; set; }
+        public IEnumerable<Service> Services { get; set; }
     }
 }

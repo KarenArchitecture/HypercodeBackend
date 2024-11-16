@@ -16,14 +16,16 @@ namespace Hypercode.Controllers
         private readonly IProjectService project_service;
         private readonly ISocialMediaService socialMedia_service;
         private readonly IEmailService email_service;
+        private readonly IServiceService service_service;
         
         
-        public HomeController(IHomeService service, IProjectService project_service, ISocialMediaService socialMedia_service, IEmailService email_service)
+        public HomeController(IHomeService service, IProjectService project_service, ISocialMediaService socialMedia_service, IEmailService email_service, IServiceService service_service)
         {
             this.service = service;
             this.project_service = project_service;
             this.socialMedia_service = socialMedia_service;
             this.email_service = email_service;
+            this.service_service = service_service;
             
         }
         public IActionResult Index(int proCatId)
@@ -37,7 +39,8 @@ namespace Hypercode.Controllers
             {
                 Home = service.GetHome(),
                 Projects = project_service.GetAllProjects(proCatId),
-                Categories = project_service.GetProjectCategories()
+                Categories = project_service.GetProjectCategories(),
+                Services = service_service.GetAllServices().Take(3)
             };
             return View(vm);
         }

@@ -1,40 +1,47 @@
 ﻿@model ProjectArchiveVM
 
-<div>
-    <!-- Nav pills -->
-    <ul class="nav nav-pills nav-justified navـnav-pills" role="tablist">
-        @foreach (var item in Model.Categories)
-        {
-            <li class="nav-item">
-                @*  *@
-                <a class="nav-link active" asp-controller="Home" asp-action="GetProject" asp-route-proCatId="@item.Id">@item.Name</a>
-            </li>
-        }
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div id="menu1" class="container tab-pane active">
-            <br>
-            <div class="row">
-                @foreach (var item in Model.Projects)
+<section class="projects-section">
+    <h3 class="projects-header">پروژه‌های ما</h3>
+    <div class="container projects-tabs">
+        <div>
+            <!-- Nav pills -->
+            <ul class="nav nav-pills nav-justified navـnav-pills" role="tablist">
+                @foreach (var item in Model.Categories)
                 {
-                    <div class="col-lg-4 col-md-6">
-                        <div class="item">
-                            <div class="card-item">
-                                <div class="circle circle2"></div>
-                                <div class="circle circle1"></div>
-                                <img src="~/image/@item.Image" />
-                            </div>
-                            <div class="content">
-                                <p>
-                                    @item.ShortDescription
-                                    <br><br><br><a asp-controller="Project" asp-action="Single" asp-route-projectId="@item.Id" class="button">ادامه ی مطلب</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <li class="nav-item">
+                        @*  *@
+                        <a class="nav-link active" asp-controller="Home" asp-action="GetProject" asp-route-proCatId="@item.Id">@item.Name</a>
+                    </li>
                 }
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="menu1" class="container tab-pane active">
+                    <br>
+                    <div class="row">
+                        @foreach (var item in Model.Projects)
+                        {
+                            <div class="col-lg-4 col-md-6">
+                                <div class="item">
+                                    <div class="card-item">
+                                        <div class="circle circle2"></div>
+                                        <div class="circle circle1"></div>
+                                        <img src="~/image/@item.Image" />
+                                    </div>
+                                    <div class="content">
+                                        <p>
+                                            @item.ShortDescription
+                                            <br><br><br><a asp-controller="Project" asp-action="Single" asp-route-projectId="@item.Id" class="button">ادامه ی مطلب</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+</section>
+
